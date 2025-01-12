@@ -5,6 +5,9 @@ import * as RAPIER from '@dimforge/rapier3d';
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+const raycaster = new THREE.Raycaster();
+const table = new THREE.Plane(new THREE.Vector3(0, 1, 0));
+const THROW_FORCE = 20.0;
 
 // create renderer
 const renderer = new THREE.WebGLRenderer({ alpha: true });
@@ -12,6 +15,8 @@ renderer.setClearAlpha(0)
 renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.setAnimationLoop(animate);
 document.body.appendChild(renderer.domElement);
+
+renderer.domElement.addEventListener('click', handleMouseClick)
 
 // add orbit controls
 const controls = new OrbitControls(camera, renderer.domElement);
@@ -30,12 +35,11 @@ const WAIT_FRAMES = 30;
 
 const dynamicObjects = addObjects();
 
-camera.position.set(0, 8, 2);
+camera.position.set(0, 10, 4);
 camera.lookAt(0, 0, 0);
 
 function animate() {
   controls.update();
-  renderer.render(scene, camera);
 
   if (renderer.info.render.frame >= WAIT_FRAMES) {
     world.step();
@@ -47,6 +51,8 @@ function animate() {
       piece.setRotationFromQuaternion(new THREE.Quaternion(q.x, q.y, q.z, q.w));
     });
   }
+
+  renderer.render(scene, camera);
 }
 
 function addObjects() {
@@ -66,4 +72,26 @@ function addObjects() {
   }
 
   return objects;
+}
+
+function handleMouseClick(event: MouseEvent) {
+  raycaster.setFromCamera(getPointer(event), camera);
+  const intersection = new THREE.Vector3();
+  if (!raycaster.ray.intersectPlane(table, intersection)) return;
+
+  const { piece, body } = createRandomPlatonic(scene, world, camera.position);
+
+  const impulse = intersection.sub(camera.position).setLength(THROW_FORCE);
+
+  body.applyImpulse(impulse, true);
+  body.applyTorqueImpulse(impulse.randomDirection(), true);
+
+  dynamicObjects.push({ piece, body });
+}
+
+function getPointer(event: MouseEvent) {
+  const r = renderer.domElement.getBoundingClientRect();
+  const x = ((event.clientX - r.left) / r.width) * 2 - 1;
+  const y = -((event.clientY - r.top) / r.height) * 2 + 1;
+  return new THREE.Vector2(x, y);
 }

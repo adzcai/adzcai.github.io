@@ -22,6 +22,15 @@ export function createFloor(scene: THREE.Scene, world: RAPIER.World, {
     const floorColliderDesc = RAPIER.ColliderDesc.cuboid(size / 2, 1, size / 2);
     floorColliderDesc.setTranslation(0, -1, 0);
     world.createCollider(floorColliderDesc);
+
+    // Add fence colliders around the perimeter
+    const topBottomWallDesc = RAPIER.ColliderDesc.cuboid(0.1, 2, size/2);
+    world.createCollider(topBottomWallDesc.setTranslation(size/2, 1, 0));    // Right wall
+    world.createCollider(topBottomWallDesc.setTranslation(-size/2, 1, 0));   // Left wall
+    
+    const leftRightWallDesc = RAPIER.ColliderDesc.cuboid(size/2, 2, 0.1);
+    world.createCollider(leftRightWallDesc.setTranslation(0, 1, size/2));   // Back wall 
+    world.createCollider(leftRightWallDesc.setTranslation(0, 1, -size/2));  // Front wall
 }
 
 export function createRandomPlatonic(scene: THREE.Scene, world: RAPIER.World, {
