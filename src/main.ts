@@ -1,24 +1,44 @@
-import './style.css'
-import typescriptLogo from './typescript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.ts'
+import * as THREE from 'three';
+import { createCube, createFloor } from './objects';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js'
 
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://www.typescriptlang.org/" target="_blank">
-      <img src="${typescriptLogo}" class="logo vanilla" alt="TypeScript logo" />
-    </a>
-    <h1>Vite + TypeScript</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite and TypeScript logos to learn more
-    </p>
-  </div>
-`
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 
-setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
+// create renderer
+const renderer = new THREE.WebGLRenderer();
+renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.setAnimationLoop(animate);
+document.body.appendChild(renderer.domElement);
+
+// Add orbit controls
+const controls = new OrbitControls(camera, renderer.domElement);
+controls.enableDamping = true; // Add smooth damping effect
+controls.dampingFactor = 0.05;
+controls.screenSpacePanning = false;
+controls.minDistance = 1;
+controls.maxDistance = 50;
+controls.maxPolarAngle = Math.PI / 2; // Prevent camera from going below the ground
+
+
+addObjects();
+
+camera.position.set(0, 8, 2);
+camera.lookAt(0, 0, 0);
+
+function animate() {
+  controls.update();
+  renderer.render(scene, camera);
+}
+
+function addObjects() {
+  const floor = createFloor({});
+  scene.add(floor);
+
+  for (let x = -3; x <= 3; x += 1) {
+    for (let z = -3; z <= 3; z += 1) {
+      const cube = createCube({ x, y: 0.5, z });
+      scene.add(cube);
+    }
+  }
+}
