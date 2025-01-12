@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import { createCube, createFloor, createRandomPlatonic, createTetrahedron } from './objects';
+import { createFloor, createRandomPlatonic } from './objects';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js'
 import * as RAPIER from '@dimforge/rapier3d';
 
@@ -53,7 +53,7 @@ function addObjects() {
   const objects = [];
 
   const light = new THREE.DirectionalLight(0xffffff, 1);
-  light.position.set(-2, 6, 2);
+  light.position.set(-2, 2, 2);
   scene.add(light);
 
   createFloor(scene, world, {});

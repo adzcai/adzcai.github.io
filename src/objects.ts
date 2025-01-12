@@ -1,10 +1,11 @@
 import * as THREE from 'three';
 import * as RAPIER from '@dimforge/rapier3d'
+import { createNoise3D } from 'simplex-noise'
 
 
 export function createFloor(scene: THREE.Scene, world: RAPIER.World, {
     size = 20,
-    divisions = 20,
+    divisions = 40,
     color1 = 0x0000ff,
     color2 = 0x808080,
 }) {
@@ -33,24 +34,11 @@ export function createRandomPlatonic(scene: THREE.Scene, world: RAPIER.World, {
         (size: number) => new THREE.DodecahedronGeometry(size),
         (size: number) => new THREE.IcosahedronGeometry(size),
     ];
-    
+
     const geometry = creators[Math.floor(Math.random() * creators.length)](size);
     const mesh = createMesh(geometry);
 
     return createPiece(scene, world, mesh, { x, y, z });
-}
-
-
-
-export function createIcosahedron(scene: THREE.Scene, world: RAPIER.World, {
-    x = 0, y = 0, z = 0, size = 1
-}) {
-    // icosahedron
-    const geometry = new THREE.IcosahedronGeometry(size);
-    const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-    const icosahedron = new THREE.Mesh(geometry, material);
-
-    return createPiece(scene, world, icosahedron, { x, y, z });
 }
 
 function createPiece(scene: THREE.Scene, world: RAPIER.World, mesh: THREE.Mesh, { x, y, z }: RAPIER.Vector) {
@@ -95,15 +83,20 @@ function colliderDescFromGeometry(geometry: THREE.BufferGeometry) {
     return colliderDesc;
 }
 
-function createMesh(geometry: THREE.BufferGeometry) {
+function createMesh(geometry: THREE.BufferGeometry, noiseScale = 1.0) {
     const positions = geometry.getAttribute('position');
     const colors = new Float32Array(positions.count * 3);
+    const noise3D = createNoise3D();
 
     for (let i = 0; i < positions.count; i += 1) {
+        const x = positions.getX(i);
         const y = positions.getY(i);
+        const z = positions.getZ(i);
+
+        const hue = (noise3D(x * noiseScale, y * noiseScale, z * noiseScale) + 1) / 2;
 
         const color = new THREE.Color();
-        color.setHSL(y + 0.5, 1, 0.5);
+        color.setHSL(hue, 1, 0.5);
 
         colors[i * 3] = color.r;
         colors[i * 3 + 1] = color.g;
