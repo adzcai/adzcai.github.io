@@ -52,6 +52,10 @@ function animate() {
 function addObjects() {
   const objects = [];
 
+  const light = new THREE.DirectionalLight(0xffffff, 1);
+  light.position.set(-2, 6, 2);
+  scene.add(light);
+
   createFloor(scene, world, {});
 
   for (let x = -3; x <= 3; x += 1) {

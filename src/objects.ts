@@ -18,7 +18,7 @@ export function createFloor(scene: THREE.Scene, world: RAPIER.World, {
     scene.add(gridHelper);
 
     // physics
-    const floorColliderDesc = RAPIER.ColliderDesc.cuboid(size, 1, size);
+    const floorColliderDesc = RAPIER.ColliderDesc.cuboid(size / 2, 1, size / 2);
     floorColliderDesc.setTranslation(0, -1, 0);
     world.createCollider(floorColliderDesc);
 }
@@ -27,63 +27,20 @@ export function createRandomPlatonic(scene: THREE.Scene, world: RAPIER.World, {
     x = 0, y = 0, z = 0, size = 1
 }) {
     const creators = [
-        createTetrahedron,
-        createCube,
-        createOctahedron,
-        createDodecahedron,
-        createIcosahedron
+        (size: number) => new THREE.TetrahedronGeometry(size),
+        (size: number) => new THREE.BoxGeometry(size, size, size),
+        (size: number) => new THREE.OctahedronGeometry(size),
+        (size: number) => new THREE.DodecahedronGeometry(size),
+        (size: number) => new THREE.IcosahedronGeometry(size),
     ];
     
-    const randomCreator = creators[Math.floor(Math.random() * creators.length)];
-    return randomCreator(scene, world, { x, y, z, size });
+    const geometry = creators[Math.floor(Math.random() * creators.length)](size);
+    const mesh = createMesh(geometry);
+
+    return createPiece(scene, world, mesh, { x, y, z });
 }
 
 
-export function createCube(scene: THREE.Scene, world: RAPIER.World, {
-    x = 0, y = 0, z = 0, size = 1
-}) {
-    // cube
-    const geometry = new THREE.BoxGeometry(size, size, size);
-    const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-    const cube = new THREE.Mesh(geometry, material);
-    const colliderDesc = RAPIER.ColliderDesc.cuboid(size / 2, size / 2, size / 2);
-
-    return createPiece(scene, world, cube, { x, y, z }, colliderDesc);
-}
-
-
-export function createTetrahedron(scene: THREE.Scene, world: RAPIER.World, {
-    x = 0, y = 0, z = 0, size = 1
-}) {
-    // tetrahedron
-    const geometry = new THREE.TetrahedronGeometry(size);
-    const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-    const tetrahedron = new THREE.Mesh(geometry, material);
-
-    return createPiece(scene, world, tetrahedron, { x, y, z });
-}
-
-export function createOctahedron(scene: THREE.Scene, world: RAPIER.World, {
-    x = 0, y = 0, z = 0, size = 1
-}) {
-    // octahedron
-    const geometry = new THREE.OctahedronGeometry(size);
-    const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-    const octahedron = new THREE.Mesh(geometry, material);
-
-    return createPiece(scene, world, octahedron, { x, y, z });
-}
-
-export function createDodecahedron(scene: THREE.Scene, world: RAPIER.World, {
-    x = 0, y = 0, z = 0, size = 1
-}) {
-    // dodecahedron
-    const geometry = new THREE.DodecahedronGeometry(size);
-    const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-    const dodecahedron = new THREE.Mesh(geometry, material);
-
-    return createPiece(scene, world, dodecahedron, { x, y, z });
-}
 
 export function createIcosahedron(scene: THREE.Scene, world: RAPIER.World, {
     x = 0, y = 0, z = 0, size = 1
@@ -96,7 +53,7 @@ export function createIcosahedron(scene: THREE.Scene, world: RAPIER.World, {
     return createPiece(scene, world, icosahedron, { x, y, z });
 }
 
-function createPiece(scene: THREE.Scene, world: RAPIER.World, mesh: THREE.Mesh, { x, y, z }: RAPIER.Vector, colliderDesc?: RAPIER.ColliderDesc) {
+function createPiece(scene: THREE.Scene, world: RAPIER.World, mesh: THREE.Mesh, { x, y, z }: RAPIER.Vector) {
     const group = new THREE.Group();
 
     // outline
@@ -122,7 +79,7 @@ function createPiece(scene: THREE.Scene, world: RAPIER.World, mesh: THREE.Mesh, 
     const body = world.createRigidBody(bodyDesc);
 
     // collider
-    world.createCollider(colliderDesc ?? colliderDescFromGeometry(mesh.geometry)!, body);
+    world.createCollider(colliderDescFromGeometry(mesh.geometry)!, body);
 
     return {
         piece: group,
@@ -136,4 +93,30 @@ function colliderDescFromGeometry(geometry: THREE.BufferGeometry) {
         new Float32Array(vertices)
     );
     return colliderDesc;
+}
+
+function createMesh(geometry: THREE.BufferGeometry) {
+    const positions = geometry.getAttribute('position');
+    const colors = new Float32Array(positions.count * 3);
+
+    for (let i = 0; i < positions.count; i += 1) {
+        const y = positions.getY(i);
+
+        const color = new THREE.Color();
+        color.setHSL(y + 0.5, 1, 0.5);
+
+        colors[i * 3] = color.r;
+        colors[i * 3 + 1] = color.g;
+        colors[i * 3 + 2] = color.b;
+    }
+
+    geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+
+    const material = new THREE.MeshPhongMaterial({
+        vertexColors: true,
+        shininess: 80,
+    });
+
+    const mesh = new THREE.Mesh(geometry, material);
+    return mesh;
 }
