@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import { createCube, createFloor } from './objects';
+import { createCube, createFloor, createRandomPlatonic, createTetrahedron } from './objects';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js'
 import * as RAPIER from '@dimforge/rapier3d';
 
@@ -7,7 +7,8 @@ const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 
 // create renderer
-const renderer = new THREE.WebGLRenderer();
+const renderer = new THREE.WebGLRenderer({ alpha: true });
+renderer.setClearAlpha(0)
 renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.setAnimationLoop(animate);
 document.body.appendChild(renderer.domElement);
@@ -25,6 +26,7 @@ controls.maxPolarAngle = Math.PI / 2;
 const gravity = { x: 0.0, y: -9.81, z: 0.0 };
 const world = new RAPIER.World(gravity);
 
+const WAIT_FRAMES = 30;
 
 const dynamicObjects = addObjects();
 
@@ -33,15 +35,18 @@ camera.lookAt(0, 0, 0);
 
 function animate() {
   controls.update();
-  world.step();
   renderer.render(scene, camera);
 
-  dynamicObjects.forEach(({ piece, body }) => {
-    const p = body.translation();
-    piece.position.set(p.x, p.y, p.z);
-    const q = body.rotation();
-    piece.setRotationFromQuaternion(new THREE.Quaternion(q.x, q.y, q.z, q.w));
-  });
+  if (renderer.info.render.frame >= WAIT_FRAMES) {
+    world.step();
+
+    dynamicObjects.forEach(({ piece, body }) => {
+      const p = body.translation();
+      piece.position.set(p.x, p.y, p.z);
+      const q = body.rotation();
+      piece.setRotationFromQuaternion(new THREE.Quaternion(q.x, q.y, q.z, q.w));
+    });
+  }
 }
 
 function addObjects() {
@@ -51,7 +56,7 @@ function addObjects() {
 
   for (let x = -3; x <= 3; x += 1) {
     for (let z = -3; z <= 3; z += 1) {
-      const body = createCube(scene, world, { x, y: 2, z });
+      const body = createRandomPlatonic(scene, world, { x, y: 2, z });
       objects.push(body);
     }
   }
