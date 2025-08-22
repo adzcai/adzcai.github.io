@@ -4,10 +4,14 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js'
 import * as RAPIER from '@dimforge/rapier3d';
 
 const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 const raycaster = new THREE.Raycaster();
 const table = new THREE.Plane(new THREE.Vector3(0, 1, 0));
-const THROW_FORCE = 20.0;
+const THROW_FORCE = 12.0;
+
+// camera
+const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+camera.position.set(0, 10, 0);
+camera.lookAt(0, 0, 0);
 
 // create renderer
 const renderer = new THREE.WebGLRenderer({ alpha: true });
@@ -16,6 +20,7 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.setAnimationLoop(animate);
 document.body.appendChild(renderer.domElement);
 
+// listen for clicks
 renderer.domElement.addEventListener('click', handleMouseClick)
 
 // add orbit controls
@@ -33,10 +38,13 @@ const world = new RAPIER.World(gravity);
 
 const WAIT_FRAMES = 30;
 
-const dynamicObjects = addObjects();
+const dynamicObjects: Array<{ piece: THREE.Object3D, body: RAPIER.RigidBody }> = [];
 
-camera.position.set(0, 10, 4);
-camera.lookAt(0, 0, 0);
+const light = new THREE.DirectionalLight(0xffffff, 1);
+light.position.set(0, 4, 0);
+scene.add(light);
+
+createFloor(world, {});
 
 function animate() {
   controls.update();
@@ -55,36 +63,16 @@ function animate() {
   renderer.render(scene, camera);
 }
 
-function addObjects() {
-  const objects = [];
-
-  const light = new THREE.DirectionalLight(0xffffff, 1);
-  light.position.set(-2, 2, 2);
-  scene.add(light);
-
-  createFloor(scene, world, {});
-
-  for (let x = -3; x <= 3; x += 1) {
-    for (let z = -3; z <= 3; z += 1) {
-      const body = createRandomPlatonic(scene, world, { x, y: 2, z });
-      objects.push(body);
-    }
-  }
-
-  return objects;
-}
-
 function handleMouseClick(event: MouseEvent) {
   raycaster.setFromCamera(getPointer(event), camera);
   const intersection = new THREE.Vector3();
   if (!raycaster.ray.intersectPlane(table, intersection)) return;
 
+  intersection.sub(camera.position).setLength(THROW_FORCE);
   const { piece, body } = createRandomPlatonic(scene, world, camera.position);
 
-  const impulse = intersection.sub(camera.position).setLength(THROW_FORCE);
-
-  body.applyImpulse(impulse, true);
-  body.applyTorqueImpulse(impulse.randomDirection(), true);
+  body.applyImpulse(intersection, true);
+  body.applyTorqueImpulse(intersection.randomDirection(), true);
 
   dynamicObjects.push({ piece, body });
 }

@@ -3,34 +3,22 @@ import * as RAPIER from '@dimforge/rapier3d'
 import { createNoise3D } from 'simplex-noise'
 
 
-export function createFloor(scene: THREE.Scene, world: RAPIER.World, {
-    size = 20,
-    divisions = 40,
-    color1 = 0x0000ff,
-    color2 = 0x808080,
+export function createFloor(world: RAPIER.World, {
+    size = 40,
 }) {
-    // render
-    const gridHelper = new THREE.GridHelper(
-        size,
-        divisions,
-        color1,
-        color2
-    )
-    scene.add(gridHelper);
-
     // physics
     const floorColliderDesc = RAPIER.ColliderDesc.cuboid(size / 2, 1, size / 2);
     floorColliderDesc.setTranslation(0, -1, 0);
     world.createCollider(floorColliderDesc);
 
     // Add fence colliders around the perimeter
-    const topBottomWallDesc = RAPIER.ColliderDesc.cuboid(0.1, 2, size/2);
-    world.createCollider(topBottomWallDesc.setTranslation(size/2, 1, 0));    // Right wall
-    world.createCollider(topBottomWallDesc.setTranslation(-size/2, 1, 0));   // Left wall
-    
-    const leftRightWallDesc = RAPIER.ColliderDesc.cuboid(size/2, 2, 0.1);
-    world.createCollider(leftRightWallDesc.setTranslation(0, 1, size/2));   // Back wall 
-    world.createCollider(leftRightWallDesc.setTranslation(0, 1, -size/2));  // Front wall
+    const rightLeftWallDesc = RAPIER.ColliderDesc.cuboid(0.1, 2, size / 2);
+    world.createCollider(rightLeftWallDesc.setTranslation(size / 2, 1, 0));
+    world.createCollider(rightLeftWallDesc.setTranslation(-size / 2, 1, 0));
+
+    const topBottomWallDesc = RAPIER.ColliderDesc.cuboid(size / 2, 2, 0.1);
+    world.createCollider(topBottomWallDesc.setTranslation(0, 1, size / 2));
+    world.createCollider(topBottomWallDesc.setTranslation(0, 1, -size / 2));
 }
 
 export function createRandomPlatonic(scene: THREE.Scene, world: RAPIER.World, {
@@ -40,6 +28,7 @@ export function createRandomPlatonic(scene: THREE.Scene, world: RAPIER.World, {
         (size: number) => new THREE.TetrahedronGeometry(size),
         (size: number) => new THREE.BoxGeometry(size, size, size),
         (size: number) => new THREE.OctahedronGeometry(size),
+        (size: number) => pentagonalTrapezohedron(size),
         (size: number) => new THREE.DodecahedronGeometry(size),
         (size: number) => new THREE.IcosahedronGeometry(size),
     ];
@@ -95,14 +84,18 @@ function colliderDescFromGeometry(geometry: THREE.BufferGeometry) {
 function createMesh(geometry: THREE.BufferGeometry, noiseScale = 1.0) {
     const positions = geometry.getAttribute('position');
     const colors = new Float32Array(positions.count * 3);
+    const hueStart = Math.random();
     const noise3D = createNoise3D();
 
     for (let i = 0; i < positions.count; i += 1) {
+        // get color
         const x = positions.getX(i);
         const y = positions.getY(i);
         const z = positions.getZ(i);
 
-        const hue = (noise3D(x * noiseScale, y * noiseScale, z * noiseScale) + 1) / 2;
+        const noiseHue = noise3D(x * noiseScale, y * noiseScale, z * noiseScale) // [-1, 1]
+        const scaledHue = (noiseHue + 1) / 6; // [0, 1/3]
+        const hue = (scaledHue + hueStart) % 1;
 
         const color = new THREE.Color();
         color.setHSL(hue, 1, 0.5);
@@ -121,4 +114,14 @@ function createMesh(geometry: THREE.BufferGeometry, noiseScale = 1.0) {
 
     const mesh = new THREE.Mesh(geometry, material);
     return mesh;
+}
+
+function pentagonalTrapezohedron(size: number) {
+    const geometry = new THREE.BufferGeometry();
+
+    const C0 = (Math.sqrt(5) - 1) / 4;
+    const C1 = (Math.sqrt(5) + 1) / 4;
+    const C2 = (Math.sqrt(5) + 3) / 4;
+
+    return geometry;
 }
