@@ -1,49 +1,118 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>adzcai</title>
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: sans-serif;
-        }
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+        line-height: 1.25;
+      }
 
+      main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100svh;
+        gap: 1rem;
+      }
+
+      li + li {
+        margin-top: 0.25rem;
+      }
+
+      .about {
+        padding: 0.5rem;
+        max-width: 20rem;
+      }
+
+      @media screen and (max-width: 640px) {
         main {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100svh;
+          flex-direction: column;
+          margin-top: 1rem;
         }
-
-        li + li {
-            margin-top: 0.25rem;
-        }
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <main>
-        <div>
-            <h1>adzcai</h1>
+      <img
+        height="480"
+        style="max-width: 100%"
+        src="photo.jpg"
+        alt="An East Asian young man standing with his arms crossed in front of a window"
+      />
 
-            <p>In pursuit of namesake</p>
+      <div class="about">
+        <h1>
+          Alex Cai
+          <ruby>
+            蔡<rp>(</rp><rt>cài</rt><rp>)</rp>大<rp>(</rp><rt>dà</rt
+            ><rp>)</rp>真<rp>(</rp><rt>zhēn</rt><rp>)</rp>
+          </ruby>
+        </h1>
 
-            <p>adzcai at g dot harvard dot edu</p>
+        <p><em>In pursuit of namesake</em></p>
 
-            <ul>
-                <li>
-                    <a href="https://notes.adzc.ai">Notes</a>
-                </li>
-                <li>
-                    <a href="https://github.com/adzcai">GitHub</a>
-                </li>
-            </ul>
-        </div>
+        <p>adzcai at g dot harvard dot edu</p>
+
+        <p>
+          Hello! I'm a first year PhD student in Computer Science at Harvard
+          University, advised by
+          <a href="https://xkianteb.github.io/">Professor Kianté Brantley</a>
+          and funded by a
+          <a
+            href="https://kempnerinstitute.harvard.edu/people/our-people/alexander-dazhen-cai/"
+            >Kempner Graduate Fellowship</a
+          >.
+        </p>
+
+        <p>
+          I have come from the beaver hills,
+          <ruby>
+            <em>amiskwaciy</em>
+            <rt>"Edmonton" (Plains Cree)</rt>
+          </ruby>
+          , to the great hill,
+          <ruby>
+            <em>muhsachuweesut</em>
+            <rt>"Massachusetts" (Wampanoag)</rt> </ruby
+          >.
+        </p>
+
+        <p>
+          I am fascinated by language(s) and their acquisition by humans and
+          machines. How does human language-learning differ from language-model
+          training?
+        </p>
+
+        <p>
+          I am also intrigued by identity. What is there, if anything, that
+          makes me who I am and not somebody else?
+        </p>
+
+        <ul>
+          <li>
+            <a
+              href="https://scholar.google.com/citations?hl=en&user=J9YVrI0AAAAJ"
+              >Google Scholar</a
+            >
+          </li>
+          <li>
+            <a href="https://notes.adzc.ai">Notes</a>
+          </li>
+          <li>
+            <a href="https://github.com/adzcai">GitHub</a>
+          </li>
+          <li>
+            <a href="https://www.goodreads.com/adzcai">Goodreads</a>
+          </li>
+        </ul>
+      </div>
     </main>
-</body>
-
+  </body>
 </html>
