@@ -1,0 +1,16 @@
+# Homepage sections, in page order. Each id must match a <section id="..."> in _pages/about.md
+# (or the about/contact sections in _layouts/about.liquid). The navbar is built from this list.
+- id: about
+  title: about
+- id: news
+  title: news
+- id: publications
+  title: publications
+- id: talks
+  title: talks
+- id: teaching
+  title: teaching
+- id: cv
+  title: cv
+- id: contact
+  title: contact

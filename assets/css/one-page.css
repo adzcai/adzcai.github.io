@@ -1,0 +1,37 @@
+/* One-page homepage: smooth scrolling and section spacing. */
+html {
+  scroll-behavior: smooth;
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Keep section headings clear of the fixed navbar when jumping to them. */
+#about,
+.home-section {
+  scroll-margin-top: 4.5rem;
+}
+
+.home-section {
+  padding-top: 1.5rem;
+  margin-top: 1.5rem;
+  border-top: 1px solid var(--global-divider-color);
+}
+
+.home-section .section-description {
+  color: var(--global-text-color-light);
+  margin-top: -0.5rem;
+}
+
+/* The CV cards sit inside the cv section, so tone down their own headings. */
+#cv .card-title {
+  font-size: 1.15rem;
+}
+
+/* Subheadings inside a section (e.g. "Harvard courses") sit one step below the section title. */
+.home-section h3 {
+  font-size: 1.25rem;
+  margin-top: 1.25rem;
+}

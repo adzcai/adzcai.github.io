@@ -1,9 +1,9 @@
 ---
 layout: default
 ---
-{% comment %} Local override of al_folio_core 1.0.15 about layout: adds page.name_suffix after the name and page.profile.alt for the photo. {% endcomment %}
+{% comment %} Local override of al_folio_core 1.0.15 about layout: adds page.name_suffix after the name and page.profile.alt for the photo; one-page site, so the intro is the #about section and the social links are the #contact section. {% endcomment %}
 <div class="post">
-  <header class="post-header">
+  <header class="post-header" id="about">
     <h1 class="post-title">
       {% if site.title == 'blank' %}
         <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }}
@@ -68,11 +68,14 @@ layout: default
 
     <!-- Social -->
     {% if page.social %}
-      <div class="social">
-        <div class="contact-icons">{% social_links %}</div>
+      <section id="contact" class="home-section">
+        <h2>contact</h2>
+        <div class="social">
+          <div class="contact-icons">{% social_links %}</div>
 
-        <div class="contact-note">{{ site.contact_note }}</div>
-      </div>
+          <div class="contact-note">{{ site.contact_note }}</div>
+        </div>
+      </section>
     {% endif %}
 
     {% if site.newsletter and site.newsletter.enabled and site.footer_fixed %}
