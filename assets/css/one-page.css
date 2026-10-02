@@ -35,3 +35,24 @@ html {
   font-size: 1.25rem;
   margin-top: 1.25rem;
 }
+
+/* The CV templates use Bootstrap's list-group and table classes, but al-folio v1 ships without
+   Bootstrap, so entries fell back to bulleted list items (stray dots by the date badges) and
+   bordered table cells (thin lines above the dates). Restore the intended plain layout. */
+.cv .list-group {
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+.cv .list-group-item {
+  display: block;
+  list-style: none;
+  /* Side padding offsets the grid row's negative margins, keeping dates off the card edge. */
+  padding: 0.5rem 15px;
+  background: transparent;
+  border: 0;
+}
+.cv table.table-cv td,
+.cv table.table-cv th {
+  border-top: 0;
+}
