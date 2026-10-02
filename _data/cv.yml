@@ -1,0 +1,70 @@
+# CV data in RenderCV format, rendered by _pages/cv.md (cv_format: rendercv).
+cv:
+  name: Alex Cai
+  label: PhD student in Computer Science, Harvard University
+  email: adzcai at g dot harvard dot edu
+  website: https://adzc.ai
+
+  sections:
+    Education:
+      - institution: Harvard University
+        area: Computer Science
+        studyType: Ph.D.
+        start_date: 2025
+        highlights:
+          - Advised by Kianté Brantley; Kempner Institute Graduate Fellowship.
+
+      - institution: Harvard University
+        area: Applied Mathematics; Statistics and Computer Science
+        studyType: S.M.; A.B.
+        start_date: 2021
+        end_date: 2025
+        highlights:
+          - A.B. cum laude in field, secondary in German.
+
+    Experience:
+      - company: Brantley Lab, Harvard
+        start_date: 2025
+        summary: Imitation learning that generalizes from few samples.
+
+      - company: Gershman Lab, Harvard
+        date: 2025
+        summary: Multitask reinforcement learning ("multitask preplay").
+
+      - company: QuantCo
+        location: Berlin
+        date: 2024
+
+      - company: Pehlevan Group, Harvard
+        position: PRISE Fellow
+        date: 2023
+        summary: 2D-to-3D video tracking via transport operators.
+
+      - company: DataStax
+        date: 2022
+
+      - company: DataStax
+        date: 2021
+
+    Teaching:
+      - bullet: "**CS 1840: Introduction to Reinforcement Learning**, Head Teaching Fellow, with Prof. Kianté Brantley (Fall 2026)"
+      - bullet: "**CS/Stat 184: Introduction to Reinforcement Learning**, Course Assistant, with Prof. Lucas Janson (Fall 2024)"
+      - bullet: "**AM 226: Theory of Neural Computation**, Course Assistant, with Prof. Cengiz Pehlevan (Fall 2024)"
+      - bullet: "**CS 181: Machine Learning**, Head Course Assistant, with Profs. Finale Doshi-Velez and David Alvarez-Melis (Spring 2024)"
+      - bullet: "**CS/Stat 184: Introduction to Reinforcement Learning**, Course Assistant, with Profs. Lucas Janson and Sham Kakade (Fall 2023)"
+      - bullet: "**CS 181: Machine Learning**, Course Assistant, with Dr. Weiwei Pan (Spring 2023)"
+      - bullet: "**CS/Stat 184: Introduction to Reinforcement Learning**, Course Assistant, with Profs. Lucas Janson and Sham Kakade (Fall 2022, first offering)"
+      - bullet: "Author of the CS/Stat 184 textbook, [An Introduction to Reinforcement Learning](https://rlbook.adzc.ai), also used for Cornell CS 4789"
+      - bullet: "**Teaching Development Fellow**, Derek Bok Center for Teaching and Learning (Jun–Sep 2026): trained undergraduate course assistants"
+      - bullet: "**Teaching Assistant, AddisCoder**, Addis Ababa (Aug 2025, Aug 2026): taught CS fundamentals to 120 high school students"
+
+    Leadership:
+      - bullet: "**Director of Graphics**, The Harvard Crimson (2024)"
+      - bullet: "**Co-Director of Fellowships**, HUMIC"
+      - bullet: "**Co-Director of Technology**, HPAIR"
+
+    Other:
+      - label: Languages
+        details: English, Mandarin (HSK 6), German (B2), French (B2)
+      - label: Interests
+        details: Trombone, musical theater, historical fiction, linguistics

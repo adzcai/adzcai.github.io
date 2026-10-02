@@ -1,0 +1,17 @@
+# Social links shown on the about page (rendered by jekyll-socials).
+# No email entry on purpose: jekyll-socials would emit a plain mailto: link. The address
+# appears only in obfuscated form (profile box and contact_note in _config.yml).
+scholar_userid: J9YVrI0AAAAJ
+github_username: adzcai
+notes:
+  logo: fa-solid fa-book-open
+  title: Notes
+  url: https://notes.adzc.ai
+rlbook:
+  logo: fa-solid fa-robot
+  title: RL textbook
+  url: https://rlbook.adzc.ai
+goodreads:
+  logo: fa-brands fa-goodreads
+  title: Goodreads
+  url: https://www.goodreads.com/adzcai
