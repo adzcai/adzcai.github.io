@@ -39,7 +39,7 @@ into the build, and `url`/`baseurl` in `_config.yml` are set for that custom dom
 | CV | `_data/cv.yml` (RenderCV format), page settings in `_pages/cv.md` |
 | Social icons | `_data/socials.yml` (no email icon, so the address is never published unobfuscated) |
 | Theme colors (favicon teal) | `_sass/_themes.scss` (`--global-theme-color`) |
-| Favicons, web manifest | `assets/img/`, `site.webmanifest`, `_includes/head.liquid` |
+| Favicons, web manifest | `assets/icons/` (PNGs, kept out of `assets/img/` so ImageMagick skips them), `assets/img/favicon.ico`, `site.webmanifest`, `_includes/head.liquid` |
 
 `_includes/head.liquid`, `_includes/news.liquid`, `_layouts/about.liquid` and `_sass/_themes.scss` are
 local copies of the theme gem's files with small, commented changes (extra favicon links; month-year news
