@@ -16,19 +16,19 @@ nav_order: 4
   </tr>
   <tr>
     <th scope="row">Fall 2024</th>
-    <td><b>CS/Stat 184: Introduction to Reinforcement Learning</b><br>Course Assistant, with <a href="https://lucasjanson.fas.harvard.edu/">Prof. Lucas Janson</a></td>
+    <td><b>CS/Stat 184: Introduction to Reinforcement Learning</b><br>Course Assistant, with <a href="https://lucasjanson.fas.harvard.edu/">Prof. Lucas Janson</a><br><small>Q rating 4.82/5 (11 responses)</small></td>
   </tr>
   <tr>
     <th scope="row">Fall 2024</th>
-    <td><b>AM 226: Theory of Neural Computation</b><br>Course Assistant, with Prof. Cengiz Pehlevan</td>
+    <td><b>AM 226: Theory of Neural Computation</b><br>Course Assistant, with Prof. Cengiz Pehlevan<br><small>Q rating 4.90/5 (10 responses; dept. mean 4.54)</small></td>
   </tr>
   <tr>
     <th scope="row">Spring 2024</th>
-    <td><b>CS 181: Machine Learning</b><br>Head Course Assistant, with Profs. Finale Doshi-Velez and <a href="https://dmelis.github.io/">David Alvarez-Melis</a></td>
+    <td><b>CS 181: Machine Learning</b><br>Head Course Assistant, with Profs. Finale Doshi-Velez and <a href="https://dmelis.github.io/">David Alvarez-Melis</a><br><small>Q rating 4.92/5 (13 responses; dept. mean 4.72)</small></td>
   </tr>
   <tr>
     <th scope="row">Fall 2023</th>
-    <td><b>CS/Stat 184: Introduction to Reinforcement Learning</b><br>Course Assistant, with Profs. <a href="https://lucasjanson.fas.harvard.edu/">Lucas Janson</a> and <a href="https://shamulent.github.io/">Sham Kakade</a></td>
+    <td><b>CS/Stat 184: Introduction to Reinforcement Learning</b><br>Course Assistant, with Profs. <a href="https://lucasjanson.fas.harvard.edu/">Lucas Janson</a> and <a href="https://shamulent.github.io/">Sham Kakade</a><br><small>Q rating 5.00/5 (2 responses)</small></td>
   </tr>
   <tr>
     <th scope="row">Spring 2023</th>
@@ -36,7 +36,7 @@ nav_order: 4
   </tr>
   <tr>
     <th scope="row">Fall 2022</th>
-    <td><b>CS/Stat 184: Introduction to Reinforcement Learning</b> (first offering)<br>Course Assistant, with Profs. <a href="https://lucasjanson.fas.harvard.edu/">Lucas Janson</a> and <a href="https://shamulent.github.io/">Sham Kakade</a></td>
+    <td><b>CS/Stat 184: Introduction to Reinforcement Learning</b> (first offering)<br>Course Assistant, with Profs. <a href="https://lucasjanson.fas.harvard.edu/">Lucas Janson</a> and <a href="https://shamulent.github.io/">Sham Kakade</a><br><small>Q rating 4.88/5 (16 responses)</small></td>
   </tr>
 </table>
 
