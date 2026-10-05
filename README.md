@@ -10,13 +10,13 @@ Needs Homebrew Ruby (4.0 works with the pinned `Gemfile.lock`) and ImageMagick (
 used for responsive `.webp` images).
 
 ```sh
-export PATH=/opt/homebrew/opt/ruby/bin:$PATH
-export LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8   # bibtex parsing fails under a non-UTF-8 locale
-bundle config set --local path vendor/bundle
-bundle install
-bundle exec jekyll serve --port 4001          # http://localhost:4001
-bundle exec jekyll build                      # writes _site/
+npm run setup   # once: installs gems into vendor/bundle
+npm run serve   # http://127.0.0.1:4001, rebuilds on save (restart after editing _config.yml)
+npm run build   # writes _site/
 ```
+
+The scripts put Homebrew Ruby first on `PATH` (the system Ruby 2.6 is too old) and set a UTF-8 locale
+(bibtex parsing fails without one); see `package.json`.
 
 ## Deployment
 

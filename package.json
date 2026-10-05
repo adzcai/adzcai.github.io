@@ -1,5 +1,8 @@
 {
   "scripts": {
+    "setup": "PATH=/opt/homebrew/opt/ruby/bin:$PATH LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 bundle config set --local path vendor/bundle && PATH=/opt/homebrew/opt/ruby/bin:$PATH LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 bundle install",
+    "serve": "PATH=/opt/homebrew/opt/ruby/bin:$PATH LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 bundle exec jekyll serve --port 4001",
+    "build": "PATH=/opt/homebrew/opt/ruby/bin:$PATH LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 bundle exec jekyll build",
     "lint:prettier": "prettier . --check",
     "lint:style-contract": "node test/style_contract.js",
     "test:visual": "playwright test --config test/visual/playwright.config.js",
