@@ -56,3 +56,12 @@ html {
 .cv table.table-cv th {
   border-top: 0;
 }
+
+/* Each CV date badge (and optional location) sits in a small table that shrinks to its widest line.
+   `text-center` on the date column doesn't center tables, so without this the badge hugs the left edge
+   when there's no location and shifts right when a wider location is present. Center the table itself
+   so every badge lines up down the column. */
+.cv .date-column table.table-cv {
+  margin-left: auto;
+  margin-right: auto;
+}
