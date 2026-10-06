@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-description: Alex Cai is a second-year PhD student in Computer Science at the Kempner Institute at Harvard University working on data-constrained multilingual modelling for low-resource languages.
+description: Alex Cai is a second-year PhD student in Computer Science at Harvard University working on data-constrained multilingual modelling for low-resource languages.
 subtitle: <em>In pursuit of namesake</em>
 name_suffix: >-
   <span class="zh" lang="zh-Hans"><a href="https://www.mdbg.net/chinese/dictionary?wdqb=c%3A%2A%E8%94%A1%2A&amp;wdrst=0"><ruby>蔡<rp>(</rp><rt lang="zh-Latn-pinyin">cài</rt><rp>)</rp></ruby></a><a href="https://www.mdbg.net/chinese/dictionary?wdqb=c%3A%2A%E5%A4%A7%2A&amp;wdrst=0"><ruby>大<rp>(</rp><rt lang="zh-Latn-pinyin">dà</rt><rp>)</rp></ruby></a><a href="https://www.mdbg.net/chinese/dictionary?wdqb=c%3A%2A%E7%9C%9F%2A&amp;wdrst=0"><ruby>真<rp>(</rp><rt lang="zh-Latn-pinyin">zhēn</rt><rp>)</rp></ruby></a></span>
@@ -101,7 +101,7 @@ My full CV is available as a [PDF]({{ '/assets/pdf/cv.pdf' | relative_url }}).
 
 ### Harvard courses
 
-Students rated me 4.9 out of 5 on average as a section leader across five course offerings (52 responses in Harvard's Q Guide course evaluations).
+Average Q Report rating of 4.9 out of 5 (52 total responses).
 
 <table class="table table-sm table-borderless">
   <tr>
@@ -161,7 +161,7 @@ Students rated me 4.9 out of 5 on average as a section leader across five course
   <tr>
     <th scope="row">Sep 2025–present</th>
     <td><b>Non-Resident Tutor</b>, <a href="https://currier.harvard.edu/">Currier House</a><br />
-    Mentor undergraduates and support residential community.</td>
+    Mentor undergraduates on curricular and extra-curricular inquiries and support residential community.</td>
   </tr>
 </table>
 
@@ -183,6 +183,6 @@ I took the most common word in my vault (excluding [stopwords](https://github.co
 Repeating this resulted in the following list: 1. learning, 2. note, 3. language, 4. time, 5. data, 6. function, 7. sources.
 
 Outside of research,
-I enjoy studying languages and linguistics and am also learning the slide trumpet through [School of HONK](https://schoolofhonk.org/).
+I enjoy studying languages, reading, and learning the slide trumpet by parading with [School of HONK](https://schoolofhonk.org/)!
 
 </section>

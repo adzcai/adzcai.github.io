@@ -9,7 +9,7 @@ last_name: Cai
 contact_note: >
   adzcai at g dot harvard dot edu.
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  Alex Cai is a second-year PhD student in Computer Science at the Kempner Institute at Harvard University working on data-constrained multilingual modelling for low-resource languages.
+  Alex Cai is a second-year PhD student in Computer Science at Harvard University working on data-constrained multilingual modelling for low-resource languages.
 footer_text: >
   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with the <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
