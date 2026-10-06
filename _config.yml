@@ -7,13 +7,13 @@ first_name: Alex
 middle_name:
 last_name: Cai
 contact_note: >
-  The best way to reach me is by email: adzcai at g dot harvard dot edu.
+  adzcai at g dot harvard dot edu.
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  Alex Cai is a PhD student in Computer Science at Harvard University working on language acquisition in humans and language models.
+  Alex Cai is a second-year PhD student in Computer Science at the Kempner Institute at Harvard University working on data-constrained multilingual modelling for low-resource languages.
 footer_text: >
   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with the <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
-keywords: Alex Cai, language acquisition, language models, BabyLM, reinforcement learning, Harvard
+keywords: Alex Cai, multilingual models, synthetic data, language models, BabyLM, reinforcement learning, language acquisition, Harvard, Kempner
 lang: en # the language of your site (for example: en, fr, cn, ru, etc.)
 icon: favicon.ico # the emoji used as the favicon (alternatively, provide image name in /assets/img/)
 apple_touch_icon: /assets/icons/apple-touch-icon.png # image name in /assets/img/ (or a rooted path / absolute URL) used for iOS home-screen bookmarks; needs a real 180x180 PNG, since Safari ignores the emoji favicon above. Left empty, iOS falls back to a screenshot of the page.
@@ -186,6 +186,9 @@ newsletter:
 # -----------------------------------------------------------------------------
 # Collections
 # -----------------------------------------------------------------------------
+
+# Publish items dated in the future (e.g. news about an upcoming talk); Jekyll skips them by default.
+future: true
 
 collections:
   news:
@@ -360,6 +363,7 @@ scholar:
 
   query: "@*"
   group_by: year
+  bibliography_group_tag: h3 # years sit under the "publications" h2 on the one-page site
   group_order: descending
 
 # Display different badges withs stats for your publications

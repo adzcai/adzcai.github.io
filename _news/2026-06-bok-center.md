@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Started as a Teaching Development Fellow at the Derek Bok Center for Teaching and Learning (Jun–Sep 2026).
+Excited to join the Derek Bok Center for Teaching and Learning as a [Teaching Development Fellow](https://bokcenter.harvard.edu/teaching-development-fellows)!

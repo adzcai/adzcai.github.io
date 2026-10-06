@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Talk at Kempner Spring Into Science: _Grammar acquisition trajectories of developmentally plausible bilingual models_.
+Presented our poster on _Grammar acquisition trajectories of developmentally plausible bilingual models_ at [Kempner Spring Into Science 2026](https://kempnerinstitute.harvard.edu/events/spring-into-science-2/).

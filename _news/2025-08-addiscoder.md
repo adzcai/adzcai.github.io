@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-TA for AddisCoder in Addis Ababa.
+In Addis Ababa, Ethiopia for five weeks as a TA for the [AddisCoder](https://www.addiscoder.com/) program!

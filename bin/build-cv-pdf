@@ -1,0 +1,61 @@
+#!/usr/bin/env python3
+"""Build assets/pdf/cv.pdf from Alex's resume, minus the phone number.
+
+The resume source lives in the Obsidian vault, not this repo. Its header lists a phone number, which
+shouldn't be on a public website, so this copies the .tex into a temporary directory, drops the
+`tel:` entry (and the separator before it), and compiles that copy with latexmk.
+
+Usage: bin/build-cv-pdf [path/to/resume.tex]   (or `npm run cv`)
+"""
+
+import re
+import shutil
+import subprocess
+import sys
+import tempfile
+from pathlib import Path
+
+DEFAULT_SOURCE = Path.home() / "Vault/personal/resume/resume.tex"
+OUTPUT = Path(__file__).resolve().parent.parent / "assets/pdf/cv.pdf"
+
+
+def strip_phone(tex: str) -> str:
+    lines = tex.splitlines(keepends=True)
+    phone = [i for i, line in enumerate(lines) if "tel:" in line and not line.lstrip().startswith("%")]
+    if len(phone) != 1:
+        sys.exit(f"Expected exactly one tel: line in the resume header, found {len(phone)}; not building.")
+    i = phone[0]
+    # The phone is the last item on its header line, so the previous item's trailing " \ $|$ \"
+    # separator must become the line break the phone line ended with.
+    prev = i - 1
+    while lines[prev].lstrip().startswith("%"):
+        prev -= 1
+    fixed, n = re.subn(r"\s*\\\s*\$\|\$\s*\\\s*$", r" \\\\\n", lines[prev])
+    if n != 1:
+        sys.exit("Couldn't find the separator before the phone number; not building.")
+    lines[prev] = fixed
+    del lines[i]
+    out = "".join(lines)
+    assert "tel:" not in out.replace("% ", "")
+    return out
+
+
+def main() -> None:
+    source = Path(sys.argv[1]) if len(sys.argv) > 1 else DEFAULT_SOURCE
+    tex = strip_phone(source.read_text())
+    with tempfile.TemporaryDirectory() as tmp:
+        work = Path(tmp) / "cv.tex"
+        work.write_text(tex)
+        subprocess.run(
+            ["latexmk", "-pdf", "-interaction=nonstopmode", "-halt-on-error", "cv.tex"],
+            cwd=tmp,
+            check=True,
+            stdout=subprocess.DEVNULL,
+        )
+        OUTPUT.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(Path(tmp) / "cv.pdf", OUTPUT)
+    print(f"Wrote {OUTPUT.relative_to(Path.cwd()) if OUTPUT.is_relative_to(Path.cwd()) else OUTPUT}")
+
+
+if __name__ == "__main__":
+    main()

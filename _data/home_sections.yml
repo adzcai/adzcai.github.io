@@ -1,5 +1,6 @@
 # Homepage sections, in page order. Each id must match a <section id="..."> in _pages/about.md
 # (or the about/contact sections in _layouts/about.liquid). The navbar is built from this list.
+# An entry with `url` instead of `id` links straight to that file or page (the CV PDF opens in a new tab).
 - id: about
   title: about
 - id: news
@@ -10,7 +11,9 @@
   title: talks
 - id: teaching
   title: teaching
-- id: cv
-  title: cv
+- id: service
+  title: service
+- title: cv
+  url: /assets/pdf/cv.pdf
 - id: contact
   title: contact

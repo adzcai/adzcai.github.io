@@ -120,20 +120,22 @@
   {% endif %}
   <link rel="apple-touch-icon" href="{{ apple_touch_icon_url }}">
 {% endif %}
-{% comment %} Local addition (adzc.ai): one-page scrolling (smooth scroll, menu highlights the current section). {% endcomment %}
-<link rel="stylesheet" href="{{ '/assets/css/one-page.css' | relative_url | bust_file_cache }}">
+{% comment %} Local addition (adzc.ai): one-page scrolling (menu highlights the current section); its CSS is linked after main.css below. {% endcomment %}
 <script defer src="{{ '/assets/js/one-page.js' | relative_url | bust_file_cache }}"></script>
 {% comment %} Local addition (adzc.ai): extra favicon sizes, web manifest, browser theme color. {% endcomment %}
-<link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/icons/favicon-32.png' | relative_url }}">
-<link rel="icon" type="image/png" sizes="192x192" href="{{ '/assets/icons/icon-192.png' | relative_url }}">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/icons/favicon-32.png' | relative_url }}" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/png" sizes="192x192" href="{{ '/assets/icons/icon-192.png' | relative_url }}" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/icons/favicon-32-dark.png' | relative_url }}" media="(prefers-color-scheme: dark)">
+<link rel="icon" type="image/png" sizes="192x192" href="{{ '/assets/icons/icon-192-dark.png' | relative_url }}" media="(prefers-color-scheme: dark)">
 <link rel="manifest" href="{{ '/site.webmanifest' | relative_url }}">
 <meta name="theme-color" content="#13836c" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#1c1c1d" media="(prefers-color-scheme: dark)">
 <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url | bust_css_cache }}">
-{% comment %} Local change (adzc.ai): the homepage also renders the CV (one-page site), so it needs this stylesheet too. {% endcomment %}
-{% if page.layout == 'cv' or page.layout == 'about' %}{% if site.plugins contains 'al_folio_cv' and site.al_folio.features.cv.enabled != false %}
+{% comment %} Local addition (adzc.ai): loaded after main.css so its overrides win. {% endcomment %}
+<link rel="stylesheet" href="{{ '/assets/css/one-page.css' | relative_url | bust_file_cache }}">
+{% if page.layout == 'cv' and site.plugins contains 'al_folio_cv' and site.al_folio.features.cv.enabled != false %}
   <link rel="stylesheet" href="{{ '/assets/css/al-folio-cv.css' | relative_url | bust_file_cache }}">
-{% endif %}{% endif %}
+{% endif %}
 <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
 
 {% if site.enable_darkmode %}

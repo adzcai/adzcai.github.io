@@ -2,10 +2,10 @@
 layout: about
 title: about
 permalink: /
-description: Alex Cai is a PhD student in Computer Science at Harvard University working on language acquisition in humans and language models.
-subtitle: <em>In pursuit of namesake.</em> PhD student in Computer Science at Harvard University.
+description: Alex Cai is a second-year PhD student in Computer Science at the Kempner Institute at Harvard University working on data-constrained multilingual modelling for low-resource languages.
+subtitle: <em>In pursuit of namesake</em>
 name_suffix: >-
-  <span class="zh" lang="zh-Hans"><a href="https://www.mdbg.net/chinese/dictionary?wdqb=c%3A%2A%E8%94%A1%2A&amp;wdrst=0"><ruby>蔡<rp>(</rp><rt>cài</rt><rp>)</rp></ruby></a><a href="https://www.mdbg.net/chinese/dictionary?wdqb=c%3A%2A%E5%A4%A7%2A&amp;wdrst=0"><ruby>大<rp>(</rp><rt>dà</rt><rp>)</rp></ruby></a><a href="https://www.mdbg.net/chinese/dictionary?wdqb=c%3A%2A%E7%9C%9F%2A&amp;wdrst=0"><ruby>真<rp>(</rp><rt>zhēn</rt><rp>)</rp></ruby></a></span>
+  <span class="zh" lang="zh-Hans"><a href="https://www.mdbg.net/chinese/dictionary?wdqb=c%3A%2A%E8%94%A1%2A&amp;wdrst=0"><ruby>蔡<rp>(</rp><rt lang="zh-Latn-pinyin">cài</rt><rp>)</rp></ruby></a><a href="https://www.mdbg.net/chinese/dictionary?wdqb=c%3A%2A%E5%A4%A7%2A&amp;wdrst=0"><ruby>大<rp>(</rp><rt lang="zh-Latn-pinyin">dà</rt><rp>)</rp></ruby></a><a href="https://www.mdbg.net/chinese/dictionary?wdqb=c%3A%2A%E7%9C%9F%2A&amp;wdrst=0"><ruby>真<rp>(</rp><rt lang="zh-Latn-pinyin">zhēn</rt><rp>)</rp></ruby></a></span>
 
 profile:
   align: right
@@ -13,10 +13,8 @@ profile:
   alt: Alex Cai smiling, wearing glasses and a crocheted multicolored scarf
   image_circular: false
   more_info: >
-    <p>Computer Science</p>
-    <p>Harvard University</p>
-    <p>Kempner Institute Graduate Fellow</p>
-    <p>adzcai at g dot harvard dot edu</p>
+    <p style="font-size: 0.8rem;">he/him</p>
+    <p style="font-size: 0.8rem;">adzcai at g dot harvard dot edu</p>
 
 selected_papers: false
 social: true
@@ -33,13 +31,17 @@ Hello! I'm a second-year PhD student in Computer Science at Harvard University, 
 [Kempner Institute Graduate Fellowship](https://kempnerinstitute.harvard.edu/people/our-people/alexander-dazhen-cai/).
 
 I have come from the beaver hills,
-<ruby lang="cr"><em>amiskwaciy</em><rp>(</rp><rt lang="en">"Edmonton" (Plains Cree)</rt><rp>)</rp></ruby>,
+<ruby lang="crk-Cans">ᐊᒥᐢᑿᒋᐩ<rp>(</rp><rt lang="crk-Latn">amiskwaciy</rt><rp>)</rp></ruby> (Plains Cree),
+or "<a href="https://why.edmonton.ca/">Edmonton</a>,"
 to the great hill,
-<ruby lang="wam"><em>muhsachuweesut</em><rp>(</rp><rt lang="en">"Massachusetts" (Wampanoag)</rt><rp>)</rp></ruby>.
+<em lang="wam">muhsachuweesut</em> (Wampanoag),
+"Massachusetts."
 
-I am fascinated by language(s) and their acquisition by humans and machines. How does human
-language-learning differ from language-model training? I work on developmentally plausible,
-data-constrained (multilingual) language modelling, reinforcement learning, and imitation learning.
+My research focuses on **data-constrained multilingual modelling** with the goal of supporting communities engaged in **language preservation and revitalization**.
+There are an estimated 7,000 languages spoken in the world and digital technology only supports a privileged few of them.
+**Language is power!**
+I am very interested in collaborations on applied projects.
+Please reach out!
 
 I am also intrigued by identity. What is there, if anything, that makes me who I am and not somebody else?
 
@@ -55,9 +57,10 @@ I am also intrigued by identity. What is there, if anything, that makes me who I
 
 ## publications {#publications-heading}
 
-<p class="section-description">Publications in reverse chronological order. * denotes equal contribution.</p>
+<p class="section-description">reverse chronological order. * denotes equal contribution.</p>
 
 Also on [Google Scholar](https://scholar.google.com/citations?hl=en&user=J9YVrI0AAAAJ).
+My full CV is available as a [PDF]({{ '/assets/pdf/cv.pdf' | relative_url }}).
 
 
 <div class="publications">
@@ -74,20 +77,19 @@ Also on [Google Scholar](https://scholar.google.com/citations?hl=en&user=J9YVrI0
 
 <table class="table table-sm table-borderless">
   <tr>
-    <th scope="row" style="width: 20%">Sep 2, 2026</th>
-    <td><b>Investigating code-switched curriculum learning in data-constrained multilingual modelling</b><br>Kempner Institute Workshop: <em>Learning Dynamics in Natural and Artificial Intelligence</em></td>
-  </tr>
-  <tr>
-    <th scope="row">May 21, 2026</th>
-    <td><b>Grammar acquisition trajectories of developmentally plausible bilingual models</b><br>Kempner Institute Spring Into Science</td>
+    <th scope="row">Oct 8, 2026</th>
+    <td><b>Cross-lingual transfer in multilingual models</b><br />
+    Kempner Lunch and Learn</td>
   </tr>
   <tr>
     <th scope="row">Sep 16, 2025</th>
-    <td><b>Maximum entropy reinforcement learning</b><br>Kempner Lunch and Learn</td>
+    <td><b>Maximum entropy reinforcement learning</b><br />
+    Kempner Lunch and Learn</td>
   </tr>
   <tr>
-    <th scope="row">Jul 17, 2025</th>
-    <td><b>A brief history of perspectives in language acquisition</b><br>Kempner Lunch and Learn</td>
+    <th scope="row">Jul 16, 2025</th>
+    <td><b>A brief history of perspectives in language acquisition</b><br />
+    Kempner Lunch and Learn</td>
   </tr>
 </table>
 
@@ -99,58 +101,88 @@ Also on [Google Scholar](https://scholar.google.com/citations?hl=en&user=J9YVrI0
 
 ### Harvard courses
 
+Students rated me 4.9 out of 5 on average as a section leader across five course offerings (52 responses in Harvard's Q Guide course evaluations).
+
 <table class="table table-sm table-borderless">
   <tr>
     <th scope="row" style="width: 20%">Fall 2026</th>
-    <td><b>CS 1840: Introduction to Reinforcement Learning</b><br>Head Teaching Fellow, with <a href="https://xkianteb.github.io/">Prof. Kianté Brantley</a></td>
+    <td><b>CS 1840: Introduction to Reinforcement Learning</b><br />
+    Head Teaching Fellow, with <a href="https://xkianteb.github.io/">Kianté Brantley</a></td>
   </tr>
   <tr>
     <th scope="row">Fall 2024</th>
-    <td><b>CS/Stat 184: Introduction to Reinforcement Learning</b><br>Course Assistant, with <a href="https://lucasjanson.fas.harvard.edu/">Prof. Lucas Janson</a><br><small>Q rating 4.82/5 (11 responses)</small><br><em class="student-quote">“He explains topics really well and you can tell he truly cares about the material and helping others. The textbook he wrote is incredible.”</em></td>
+    <td><b>CS/Stat 184: Introduction to Reinforcement Learning</b><br />
+    Course Assistant, with <a href="https://lucasjanson.fas.harvard.edu/">Lucas Janson</a></td>
   </tr>
   <tr>
     <th scope="row">Fall 2024</th>
-    <td><b>AM 226: Theory of Neural Computation</b><br>Course Assistant, with Prof. Cengiz Pehlevan<br><small>Q rating 4.90/5 (10 responses; dept. mean 4.54)</small><br><em class="student-quote">“Alex Cai is one of the best TAs I've had: he's insanely knowledgeable about the course material and is always willing to help.”</em><br><em class="student-quote">“Thanks for your replies to evening Slack messages!”</em></td>
+    <td><b>AM 226: Theory of Neural Computation</b><br />
+    Course Assistant, with <a href="https://pehlevan.seas.harvard.edu/people/cengiz-pehlevan">Cengiz Pehlevan</a></td>
   </tr>
   <tr>
     <th scope="row">Spring 2024</th>
-    <td><b>CS 181: Machine Learning</b><br>Head Course Assistant, with Profs. Finale Doshi-Velez and <a href="https://dmelis.github.io/">David Alvarez-Melis</a><br><small>Q rating 4.92/5 (13 responses; dept. mean 4.72)</small><br><em class="student-quote">“Alex is so kind and really knows how to break down the material, with many intuitive examples.”</em><br><em class="student-quote">“He did an amazing job of explaining the intuition behind the harder topics and breaking them down into components that were easier to digest and understand.”</em></td>
+    <td><b>CS 181: Machine Learning</b><br />
+    Head Course Assistant, with <a href="https://finale.seas.harvard.edu/">Finale Doshi-Velez</a> and <a href="https://dmelis.github.io/">David Alvarez-Melis</a></td>
   </tr>
   <tr>
     <th scope="row">Fall 2023</th>
-    <td><b>CS/Stat 184: Introduction to Reinforcement Learning</b><br>Course Assistant, with Profs. <a href="https://lucasjanson.fas.harvard.edu/">Lucas Janson</a> and <a href="https://shamulent.github.io/">Sham Kakade</a><br><small>Q rating 5.00/5 (2 responses)</small><br><em class="student-quote">“You were really helpful in section and were always open to answering any questions I may have had.”</em></td>
+    <td><b>CS/Stat 184: Introduction to Reinforcement Learning</b><br />
+    Course Assistant, with <a href="https://lucasjanson.fas.harvard.edu/">Lucas Janson</a> and <a href="https://shamulent.github.io/">Sham Kakade</a></td>
   </tr>
   <tr>
     <th scope="row">Spring 2023</th>
-    <td><b>CS 181: Machine Learning</b><br>Course Assistant, with <a href="https://onefishy.github.io/">Dr. Weiwei Pan</a></td>
+    <td><b>CS 181: Machine Learning</b><br />
+    Course Assistant, with <a href="https://onefishy.github.io/">Weiwei Pan</a></td>
   </tr>
   <tr>
     <th scope="row">Fall 2022</th>
-    <td><b>CS/Stat 184: Introduction to Reinforcement Learning</b> (first offering)<br>Course Assistant, with Profs. <a href="https://lucasjanson.fas.harvard.edu/">Lucas Janson</a> and <a href="https://shamulent.github.io/">Sham Kakade</a><br><small>Q rating 4.88/5 (16 responses)</small><br><em class="student-quote">“brilliant. very helpful at office hours. went above and beyond via Ed contributions. truly the best ca I've seen in a stem class”</em><br><em class="student-quote">“Alex has so much passion for teaching it was genuinely a good time to learn from him.”</em></td>
-  </tr>
-</table>
-
-I wrote the CS/Stat 184 textbook, [_An Introduction to Reinforcement Learning_](https://rlbook.adzc.ai), which is also used for Cornell CS 4789.
-
-### Other teaching
-
-<table class="table table-sm table-borderless">
-  <tr>
-    <th scope="row" style="width: 20%">Jun–Sep 2026</th>
-    <td><b>Teaching Development Fellow</b>, Derek Bok Center for Teaching and Learning, Harvard<br>Trained undergraduate course assistants.</td>
-  </tr>
-  <tr>
-    <th scope="row">Aug 2025, Aug 2026</th>
-    <td><b>Teaching Assistant, AddisCoder</b>, Addis Ababa<br>Taught CS fundamentals to 120 high school students.</td>
+    <td><b>CS/Stat 184: Introduction to Reinforcement Learning</b> (first offering)<br />
+    Course Assistant, with <a href="https://lucasjanson.fas.harvard.edu/">Lucas Janson</a> and <a href="https://shamulent.github.io/">Sham Kakade</a></td>
   </tr>
 </table>
 
 </section>
 
-<section id="cv" class="home-section" markdown="1">
+<section id="service" class="home-section" markdown="1">
 
-## cv {#cv-heading}
+## service {#service-heading}
 
-{% include cv_sections.liquid %}
+<table class="table table-sm table-borderless">
+  <tr>
+    <th scope="row" style="width: 20%">Sep 2026–present</th>
+    <td><b>Vice President</b>, <a href="https://lgbtqgsas.hsites.harvard.edu/">LGBTQ@GSAS, a Harvard Griffin GSAS Student Group</a><br />
+    Organize community events for the queer graduate student community.</td>
+  </tr>
+  <tr>
+    <th scope="row">May 2026–present</th>
+    <td><b>Peer Staffer</b>, <a href="https://intouch.seas.harvard.edu/">InTouch</a><br />
+    Organize peer support events for Harvard SEAS graduate students.</td>
+  </tr>
+  <tr>
+    <th scope="row">Sep 2025–present</th>
+    <td><b>Non-Resident Tutor</b>, <a href="https://currier.harvard.edu/">Currier House</a><br />
+    Mentor undergraduates and support residential community.</td>
+  </tr>
+</table>
+
+</section>
+
+<section id="fun" class="home-section" markdown="1">
+
+## fun facts {#fun-heading}
+
+The favicon for this site is a snapshot of my [Obsidian](https://obsidian.md/) graph:
+
+<div class="text-center my-3">
+  <img class="only-light img-fluid mx-auto" src="{{ '/assets/img/graph-light.png' | relative_url }}" alt="My Obsidian graph: thousands of notes as coloured dots packed into a circle" width="360" height="360" loading="lazy" />
+  <img class="only-dark img-fluid mx-auto" src="{{ '/assets/img/graph-dark.png' | relative_url }}" alt="My Obsidian graph: thousands of notes as coloured dots packed into a circle" width="360" height="360" loading="lazy" />
+</div>
+
+I started taking notes in Obsidian in undergrad. Each dot is a short Markdown file (median 34 words). The colours are assigned as follows:
+I took the most common word in my vault (excluding [stopwords](https://github.com/stopwords-iso/stopwords-iso)) and removed all notes containing it.
+Repeating this resulted in the following list: 1. learning, 2. note, 3. language, 4. time, 5. data, 6. function, 7. sources.
+
+Outside of research,
+I enjoy studying languages and linguistics and am also learning the slide trumpet through [School of HONK](https://schoolofhonk.org/).
 
 </section>

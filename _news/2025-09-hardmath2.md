@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-[HARDMath2](https://arxiv.org/abs/2505.11774) was accepted to NeurIPS 2025.
+[_HARDMath2_](https://arxiv.org/abs/2505.11774), a course-wide collaboration from Applied Math 201 (Spring 2025), was accepted to NeurIPS 2025!

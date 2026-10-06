@@ -13,6 +13,7 @@ used for responsive `.webp` images).
 npm run setup   # once: installs gems into vendor/bundle
 npm run serve   # http://127.0.0.1:4001, rebuilds on save (restart after editing _config.yml)
 npm run build   # writes _site/
+npm run cv      # rebuilds assets/pdf/cv.pdf from the resume in the vault (needs latexmk)
 ```
 
 The scripts put Homebrew Ruby first on `PATH` (the system Ruby 2.6 is too old) and set a UTF-8 locale
@@ -45,7 +46,8 @@ items don't get their own pages (`collections.news.output: false`).
 | Publications | `_bibliography/papers.bib` (all are listed; `abbr` is the badge) |
 | News | one file per item in `_news/` (`date_label` overrides the shown date) |
 | Talks, teaching | their sections in `_pages/about.md` |
-| CV | `_data/cv.yml` (RenderCV format; its Teaching section is skipped on the homepage), rendered by `_includes/cv_sections.liquid` |
+| CV | `assets/pdf/cv.pdf`, built by `npm run cv` from `~/Vault/personal/resume/resume.tex` with the phone number removed (`bin/build-cv-pdf`). Commit the new PDF after rebuilding. |
+| Leadership and service | its section in `_pages/about.md` |
 | Menu | `_data/home_sections.yml` |
 | Social icons | `_data/socials.yml` (no email icon, so the address is never published unobfuscated) |
 | Theme colors (favicon teal) | `_sass/_themes.scss` (`--global-theme-color`) |
@@ -54,6 +56,5 @@ items don't get their own pages (`collections.news.output: false`).
 `_includes/head.liquid`, `_includes/header.liquid`, `_includes/news.liquid`, `_layouts/about.liquid` and
 `_sass/_themes.scss` are local copies of the theme gem's files with small, commented changes (extra favicon
 links and the one-page CSS/JS; menu built from section anchors; month-year news dates; Chinese name, photo alt
-text and #about/#contact sections; teal theme color). `_includes/cv_sections.liquid` is adapted from
-`al_folio_cv`'s `templates/cv/render.liquid`. When upgrading `al_folio_core`, re-copy them from
+text and #about/#contact sections; teal theme color). When upgrading `al_folio_core`, re-copy them from
 the new gem and reapply those changes.

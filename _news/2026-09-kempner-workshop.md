@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Gave a talk at the Kempner Institute Workshop: _Learning Dynamics in Natural and Artificial Intelligence_, on investigating code-switched curriculum learning in data-constrained multilingual modelling.
+Presented [_Feeding BabyLMs Macaroni_](https://arxiv.org/abs/2609.30535) at the Kempner Institute Workshop on [Learning Dynamics in Natural and Artificial Intelligence](https://kempnerinstitute.harvard.edu/learning-dynamics-workshop/).
