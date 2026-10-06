@@ -1,0 +1,104 @@
+/* One-page homepage: smooth scrolling and section spacing. */
+html {
+  scroll-behavior: smooth;
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Keep section headings clear of the fixed navbar when jumping to them. */
+#about,
+.home-section {
+  scroll-margin-top: 4.5rem;
+}
+
+.home-section {
+  padding-top: 1.5rem;
+  margin-top: 1.5rem;
+  border-top: 1px solid var(--global-divider-color);
+}
+
+.home-section .section-description {
+  color: var(--global-text-color-light);
+  margin-top: -0.5rem;
+}
+
+/* Subheadings inside a section (e.g. "Harvard courses") sit one step below the section title. */
+.home-section h3 {
+  font-size: 1.25rem;
+  margin-top: 1.25rem;
+}
+
+/* The theme colors em/strong with the body text color, which overrides the link color when the
+   emphasis sits inside a link (e.g. an italicized book title). Let it inherit the link's color. */
+a em,
+a i,
+a strong,
+a b {
+  color: inherit;
+}
+
+/* Accessibility (WCAG 2.1 AA) fixes found with axe-core. */
+
+/* Links inside running text need a non-color cue: in dark mode the teal is only 1.9:1 against
+   the body text. Navbar, buttons and icon links are unaffected. */
+.post article :is(p, td, li) a,
+.news td a,
+footer a {
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+  text-decoration-thickness: 1px;
+}
+
+/* Grey helper text was 3.8:1 (light) and 4.4:1 (dark); normal-size text needs 4.5:1. */
+.home-section .section-description {
+  color: #5f5f5f;
+}
+html[data-theme="dark"] .home-section .section-description {
+  color: #a6a6a6;
+}
+
+/* Publication year headings: demoted to h3 (bibliography_group_tag) so they nest under the
+   "publications" heading, and given 3:1 contrast (they're large text) instead of the theme's
+   near-invisible divider color. Keeps the theme's right-aligned, ruled look. */
+h3.bibliography {
+  font-size: 2rem;
+  color: var(--global-text-color-light);
+  border-top: 1px solid var(--global-divider-color);
+  padding-top: 1rem;
+  margin-top: 2rem;
+  text-align: right;
+}
+
+/* Skip link: off-screen until a keyboard user tabs to it. */
+.skip-link {
+  position: absolute;
+  left: 0.5rem;
+  top: -3rem;
+  z-index: 2000;
+  padding: 0.5rem 1rem;
+  background: var(--global-bg-color);
+  color: var(--global-theme-color);
+  border: 2px solid var(--global-theme-color);
+  border-radius: 0.25rem;
+}
+.skip-link:focus {
+  top: 0.5rem;
+}
+
+/* The theme makes the whole navbar 95% opaque, which also fades its text (the active link drops
+   to 4.3:1 on white). Keep the see-through look on the background only. */
+.navbar {
+  opacity: 1;
+  background-color: color-mix(in srgb, var(--global-bg-color) 95%, transparent);
+}
+
+/* Tuck the email under the profile photo (was a 20px gap). */
+.profile figure {
+  margin-bottom: 0.25rem;
+}
+.profile .more-info {
+  margin-top: 0;
+}
