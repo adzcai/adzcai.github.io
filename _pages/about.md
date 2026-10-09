@@ -102,6 +102,7 @@ My full CV is available as a [PDF]({{ '/assets/pdf/cv.pdf' | relative_url }}).
 ### Harvard courses
 
 Average Q Report rating of 4.9 out of 5 (52 total responses).
+I strongly recommend the Derek Bok Center's [Teaching Resources](https://bokcenter.harvard.edu/teaching-resources) to all instructors!
 
 <table class="table table-sm table-borderless">
   <tr>
@@ -183,6 +184,6 @@ I took the most common word in my vault (excluding [stopwords](https://github.co
 Repeating this resulted in the following list: 1. learning, 2. note, 3. language, 4. time, 5. data, 6. function, 7. sources.
 
 Outside of research,
-I enjoy studying languages, reading, and learning the slide trumpet by parading with [School of HONK](https://schoolofhonk.org/)!
+I enjoy studying languages, reading prose and poetry, and learning the slide trumpet by parading with [School of HONK](https://schoolofhonk.org/)!
 
 </section>
