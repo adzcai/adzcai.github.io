@@ -5,4 +5,5 @@ inline: true
 related_posts: false
 ---
 
-Worked with [Wilka Carvalho](https://cogscikid.com/) in the [Gershman lab](https://gershmanlab.com/) on making model-based reinforcement learning algorithms more sample efficient in multitask settings.
+Improved sample efficiency of model-based reinforcement learning algorithms in multitask settings.
+Supervised by [Wilka Carvalho](https://cogscikid.com/) in the [Gershman lab](https://gershmanlab.com/).

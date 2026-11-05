@@ -77,19 +77,29 @@ My full CV is available as a [PDF]({{ '/assets/pdf/cv.pdf' | relative_url }}).
 
 <table class="table table-sm table-borderless">
   <tr>
+    <th scope="row">Nov 3, 2026</th>
+    <td><b>AfriGuard: safety and robust refusal for African languages</b><br />
+    <a href="https://crisp.seas.harvard.edu/">CRISP Group</a> (Computation, Representation, and Inference in Signal Processing)</td>
+  </tr>
+  <tr>
+    <th scope="row">Nov 3, 2026</th>
+    <td><b>A primer on multilingualism in transformers</a></b><br />
+    <a href="https://prism-interp-neuro.github.io/">PRISM Reading Group (Perspectives on Interpretability in Sciences and Machine Learning)</a></td>
+  </tr>
+  <tr>
     <th scope="row">Oct 8, 2026</th>
     <td><b>Cross-lingual transfer in multilingual models</b><br />
-    Kempner Lunch and Learn</td>
+    <a href="https://lunchandlearnkempner.github.io/#summer-2025">Kempner Lunch and Learn</a></td>
   </tr>
   <tr>
     <th scope="row">Sep 16, 2025</th>
-    <td><b>Maximum entropy reinforcement learning</b><br />
-    Kempner Lunch and Learn</td>
+    <td><b>Maximum entropy reinforcement learning</a><br />
+    <a href="https://lunchandlearnkempner.github.io/#summer-2025">Kempner Lunch and Learn</b></td>
   </tr>
   <tr>
     <th scope="row">Jul 16, 2025</th>
     <td><b>A brief history of perspectives in language acquisition</b><br />
-    Kempner Lunch and Learn</td>
+    <a href="https://lunchandlearnkempner.github.io/#summer-2025">Kempner Lunch and Learn</a></td>
   </tr>
 </table>
 
@@ -170,7 +180,7 @@ I strongly recommend the Derek Bok Center's [Teaching Resources](https://bokcent
 
 <section id="fun" class="home-section" markdown="1">
 
-## fun facts {#fun-heading}
+## fun {#fun-heading}
 
 The favicon for this site is a snapshot of my [Obsidian](https://obsidian.md/) graph:
 

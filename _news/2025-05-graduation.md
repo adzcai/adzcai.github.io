@@ -10,4 +10,4 @@ with a secondary (i.e. minor) in [German Studies](https://german.fas.harvard.edu
 and a [concurrent master's degree](https://oue.fas.harvard.edu/academics/special-learning-opportunities/concurrent-masters-program/) in [Applied Mathematics](https://seas.harvard.edu/applied-mathematics).
 My undergraduate thesis was the course textbook [_An Introduction to Reinforcement Learning_](https://rlbook.adzc.ai/),
 supervised by [Prof. Lucas Janson](https://lucasjanson.fas.harvard.edu/).
-My three favourite courses were Applied Math 226, Math 25A, GenEd 1114.
+My favourite courses were Applied Math 226, Math 25A, GenEd 1114.
