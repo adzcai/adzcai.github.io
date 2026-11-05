@@ -83,18 +83,18 @@ My full CV is available as a [PDF]({{ '/assets/pdf/cv.pdf' | relative_url }}).
   </tr>
   <tr>
     <th scope="row">Nov 3, 2026</th>
-    <td><b>A primer on multilingualism in transformers</a></b><br />
+    <td><b>A primer on multilingualism in transformers</b><br />
     <a href="https://prism-interp-neuro.github.io/">PRISM Reading Group (Perspectives on Interpretability in Sciences and Machine Learning)</a></td>
   </tr>
   <tr>
     <th scope="row">Oct 8, 2026</th>
     <td><b>Cross-lingual transfer in multilingual models</b><br />
-    <a href="https://lunchandlearnkempner.github.io/#summer-2025">Kempner Lunch and Learn</a></td>
+    <a href="https://lunchandlearnkempner.github.io/">Kempner Lunch and Learn</a></td>
   </tr>
   <tr>
     <th scope="row">Sep 16, 2025</th>
-    <td><b>Maximum entropy reinforcement learning</a><br />
-    <a href="https://lunchandlearnkempner.github.io/#summer-2025">Kempner Lunch and Learn</b></td>
+    <td><b>Maximum entropy reinforcement learning</b><br />
+    <a href="https://lunchandlearnkempner.github.io/#fall-2025">Kempner Lunch and Learn</a></td>
   </tr>
   <tr>
     <th scope="row">Jul 16, 2025</th>
