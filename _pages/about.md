@@ -10,7 +10,7 @@ name_suffix: >-
 profile:
   align: right
   image: profile.jpg
-  alt: Alex Cai smiling, wearing glasses and a crocheted multicolored scarf
+  alt: Alex Cai smiling, wearing glasses and a crocheted multicoloured scarf
   image_circular: false
   more_info: >
     <p style="font-size: 0.8rem;">he/him</p>
@@ -77,14 +77,14 @@ My full CV is available as a [PDF]({{ '/assets/pdf/cv.pdf' | relative_url }}).
 
 <table class="table table-sm table-borderless">
   <tr>
-    <th scope="row">Nov 3, 2026</th>
+    <th scope="row" style="width: 20%">Nov 3, 2026</th>
     <td><b>AfriGuard: safety and robust refusal for African languages</b><br />
     <a href="https://crisp.seas.harvard.edu/">CRISP Group</a> (Computation, Representation, and Inference in Signal Processing)</td>
   </tr>
   <tr>
     <th scope="row">Nov 3, 2026</th>
     <td><b>A primer on multilingualism in transformers</b><br />
-    <a href="https://prism-interp-neuro.github.io/">PRISM Reading Group (Perspectives on Interpretability in Sciences and Machine Learning)</a></td>
+    <a href="https://prism-interp-neuro.github.io/">PRISM Reading Group</a> (Perspectives on Interpretability in Sciences and Machine Learning)</td>
   </tr>
   <tr>
     <th scope="row">Oct 8, 2026</th>
@@ -162,7 +162,7 @@ I strongly recommend the Derek Bok Center's [Teaching Resources](https://bokcent
   <tr>
     <th scope="row" style="width: 20%">Sep 2026–present</th>
     <td><b>Vice President</b>, <a href="https://lgbtqgsas.hsites.harvard.edu/">LGBTQ@GSAS, a Harvard Griffin GSAS Student Group</a><br />
-    Organize community events for the queer graduate student community.</td>
+    Organize events for the queer graduate student community.</td>
   </tr>
   <tr>
     <th scope="row">May 2026–present</th>
@@ -172,7 +172,7 @@ I strongly recommend the Derek Bok Center's [Teaching Resources](https://bokcent
   <tr>
     <th scope="row">Sep 2025–present</th>
     <td><b>Non-Resident Tutor</b>, <a href="https://currier.harvard.edu/">Currier House</a><br />
-    Mentor undergraduates on curricular and extra-curricular inquiries and support residential community.</td>
+    Mentor undergraduates on curricular and extracurricular inquiries and support the residential community.</td>
   </tr>
 </table>
 

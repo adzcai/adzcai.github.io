@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-[_Feeding BabyLMs Macaroni_](https://openreview.net/forum?id=SQoJb6TuUQ) was accepted to the [EMNLP 2026 BabyLM Workshop](https://babylm.github.io/index.html)!
+[_Feeding BabyLMs Macaroni_](https://arxiv.org/abs/2609.30535) was accepted to the [EMNLP 2026 BabyLM Workshop](https://babylm.github.io/index.html)!
