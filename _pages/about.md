@@ -77,7 +77,7 @@ My full CV is available as a [PDF]({{ '/assets/pdf/cv.pdf' | relative_url }}).
 
 <table class="table table-sm table-borderless">
   <tr>
-    <th scope="row" style="width: 20%">Nov 3, 2026</th>
+    <th scope="row" style="width: 20%">Nov 11, 2026</th>
     <td><b>AfriGuard: safety and robust refusal for African languages</b><br />
     <a href="https://crisp.seas.harvard.edu/">CRISP Group</a> (Computation, Representation, and Inference in Signal Processing)</td>
   </tr>
